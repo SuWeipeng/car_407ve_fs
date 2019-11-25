@@ -1,5 +1,6 @@
 projects:
-  stm32f407ve:
+  stm32f407ve-rtt:
   - project.yaml
 settings:
-  export_dir: .
+  export_dir:
+  - generate_project
