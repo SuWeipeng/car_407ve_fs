@@ -18,11 +18,18 @@ common:
   - Libraries/rt-thread/board-F407xE
   - Libraries/rt-thread/components
   - Libraries/rt-thread/components/cplusplus
+  - Libraries/rt-thread/components/dfs/include
+  - Libraries/rt-thread/components/dfs/filesystems
+  - Libraries/rt-thread/components/dfs/filesystems/devfs
+  - Libraries/rt-thread/components/dfs/filesystems/elmfat
   - Libraries/rt-thread/components/drivers
   - Libraries/rt-thread/components/drivers/include
-  - Libraries/rt-thread/components/drivers/include/drivers/pin.h
-  - Libraries/rt-thread/components/drivers/include/drivers/serial.h
+  - Libraries/rt-thread/components/drivers/include/drivers
   - Libraries/rt-thread/components/finsh
+  - Libraries/rt-thread/components/libc
+  - Libraries/rt-thread/components/libc/compilers
+  - Libraries/rt-thread/components/libc/compilers/common
+  - Libraries/rt-thread/components/libc/compilers/common/sys
   - Libraries/rt-thread/HAL_Drivers
   - Libraries/rt-thread/HAL_Drivers/config
   - Libraries/rt-thread/HAL_Drivers/config/f4
@@ -31,14 +38,25 @@ common:
   sources:
     Drivers:
     - Drivers/STM32F4xx_HAL_Driver/Src
+    FileSystem:
+    - Libraries/rt-thread/components/dfs/src/dfs.c
+    - Libraries/rt-thread/components/dfs/src/dfs_file.c
+    - Libraries/rt-thread/components/dfs/src/dfs_fs.c
+    - Libraries/rt-thread/components/dfs/src/dfs_posix.c
+    - Libraries/rt-thread/components/dfs/filesystems/devfs/devfs.c
+    - Libraries/rt-thread/components/dfs/filesystems/elmfat/dfs_elm.c
+    - Libraries/rt-thread/components/dfs/filesystems/elmfat/ff.c
+    - Libraries/rt-thread/components/dfs/filesystems/elmfat/option/ccsbcs.c
     RTThread:
     - Libraries/rt-thread/board-F407xE
+    - Libraries/rt-thread/board-F407xE/ports
     - Libraries/rt-thread/components/cplusplus/MutexCPP.cpp
     - Libraries/rt-thread/components/cplusplus/SemaphoreCPP.cpp
     - Libraries/rt-thread/components/cplusplus/ThreadCPP.cpp
     - Libraries/rt-thread/components/cplusplus/crt.cpp
     - Libraries/rt-thread/components/cplusplus/crt_init.c
     - Libraries/rt-thread/components/drivers/misc/pin.c
+    - Libraries/rt-thread/components/drivers/sdio
     - Libraries/rt-thread/components/drivers/serial/serial.c
     - Libraries/rt-thread/components/drivers/src/completion.c
     - Libraries/rt-thread/components/drivers/src/dataqueue.c

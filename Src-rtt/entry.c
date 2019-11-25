@@ -23,12 +23,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <entry.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+#define LED0_PIN    GET_PIN(A, 6)
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -119,13 +119,17 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+  rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    rt_pin_write(LED0_PIN, PIN_HIGH);
+    rt_thread_mdelay(500);
+    rt_pin_write(LED0_PIN, PIN_LOW);
+    rt_thread_mdelay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
