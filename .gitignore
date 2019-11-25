@@ -1,0 +1,5 @@
+MDK-ARM/*
+EWARM/*
+generate_project/*
+*.udb
+.mxproject
