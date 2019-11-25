@@ -1,22 +1,22 @@
 common:
   includes:
   - Drivers
-  - Drivers\CMSIS
-  - Drivers\CMSIS\Device
-  - Drivers\CMSIS\Device\ST
-  - Drivers\CMSIS\Device\ST\STM32F4xx
-  - Drivers\CMSIS\Device\ST\STM32F4xx\Include
-  - Drivers\CMSIS\Include
-  - Drivers\STM32F4xx_HAL_Driver
-  - Drivers\STM32F4xx_HAL_Driver\Inc
-  - Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
+  - Drivers/CMSIS
+  - Drivers/CMSIS/Device
+  - Drivers/CMSIS/Device/ST
+  - Drivers/CMSIS/Device/ST/STM32F4xx
+  - Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  - Drivers/CMSIS/Include
+  - Drivers/STM32F4xx_HAL_Driver
+  - Drivers/STM32F4xx_HAL_Driver/Inc
+  - Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
   - Inc
   sources:
     Drivers:
-    - Drivers\STM32F4xx_HAL_Driver\Src
+    - Drivers/STM32F4xx_HAL_Driver/Src
     IDE:
-    - IDE\IAR
-    - IDE\MDK5
+    - IDE/IAR
+    - IDE/MDK5
     Src:
     - Src
   target:
@@ -24,10 +24,10 @@ common:
 tool_specific:
   iar_arm:
     linker_file:
-    - IDE\IAR\stm32f407xx_flash.icf
+    - IDE/IAR/stm32f407xx_flash.icf
   make_gcc_arm:
     linker_file:
-    - IDE\GCC\STM32F407VETx_FLASH.ld
+    - IDE/GCC/STM32F407VETx_FLASH.ld
   uvision:
     linker_file:
-    - IDE\MDK5\car_407ve.sct
+    - IDE/MDK5/car_407ve.sct
